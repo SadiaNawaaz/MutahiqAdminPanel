@@ -1,0 +1,186 @@
+﻿@page "/AddUser"
+@inject HttpClient _HttpClient;
+@inject IJSRuntime JSRuntime;
+
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Add User</h4>
+                    <div class="flex-shrink-0">
+                      
+                    </div>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+
+                                    <label for="labelInput" class="form-label">Name</label>
+                                    <div class="form-icon">
+                                        <input type="password" class="form-control form-control-icon" id="labelInput">
+                                        <i class="ri-user-2-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="iconInput" class="form-label">Email</label>
+                                    <div class="form-icon">
+                                        <input type="email" class="form-control form-control-icon" id="iconInput" placeholder="example@gmail.com">
+                                        <i class="ri-mail-unread-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="valueInput" class="form-label">Phone No</label>
+                                    <div class="form-icon">
+                                        <input type="text" class="form-control form-control-icon" id="valueInput" value="+92313123">
+                                        <i class="ri-phone-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="valueInput" class="form-label">Location</label>
+                                    <div class="form-icon">
+                                        <input type="text" class="form-control form-control-icon" id="valueInput" value="Lahore,Pakistan">
+                                        <i class="ri-user-5-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="valueInput" class="form-label">Designation</label>
+                                    <div class="form-icon">
+                                        <input type="text" class="form-control form-control-icon" id="valueInput" value="Admin">
+                                        <i class="ri-user-5-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="placeholderInput" class="form-label">Password</label>
+                                    <div class="form-icon">
+                                        <input type="password" class="form-control form-control-icon" id="placeholderInput" placeholder="Password">
+                                        <i class="ri-lock-password-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-xxl-3 col-md-3">
+                                <label for="ticket-status" class="form-label">Status</label>
+                                <select class="form-control" data-choices="" data-choices-search-false="" id="ticket-status">
+                                    <option value="">Status</option>
+                                    <option value="New">Block</option>
+                                    <option value="Inprogress">Active</option>
+
+                                </select>
+                            </div>
+
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <div>
+                        <br /> <br />
+                        <div class="hstack gap-2 justify-content-end">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" id="add-btn">Save</button>
+                            <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
+                        </div>
+                    </div>
+                    <div class="d-none code-view">
+                      
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+
+    <!--<div class="row">
+        <div class="col-md-12 stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Register User</h6>
+                    @if (success)
+                    {
+                        <div class="alert alert-success">
+                            <strong>Success!</strong>  @Msg
+                        </div>
+                    }
+                    @if (fail)
+                    {
+                        <div class="alert alert-danger">
+                            <strong>Failure!</strong> @Msg
+                        </div>
+                    }
+                    <EditForm Model="@userModel" OnValidSubmit="HandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <InputText id="name" @bind-Value="userModel.FullName" class="form-control" />
+                                </div>
+                            </div>-->
+    <!-- Col -->
+    <!--<div class="col-sm-6">
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <InputText id="name" @bind-Value="userModel.Email" class="form-control" />
+        </div>
+    </div>-->
+    <!-- Col -->
+    <!--</div>--><!-- Row -->
+    <!--<div class="row">
+        <div class="col-sm-4">
+            <div class="mb-3">
+                <label class="form-label">Phone No</label>
+                <InputText id="name" @bind-Value="userModel.PhoneNo" class="form-control" />
+            </div>
+        </div>-->
+    <!-- Col -->
+    <!--<div class="col-sm-4">
+        <div class="mb-3">
+            <label class="form-label">PassWord</label>
+            <InputText type="password" @bind-Value="userModel.Password" class="form-control" />
+        </div>
+    </div>-->
+    <!-- Col -->
+    <!--<div class="col-sm-4">
+        <div class="mb-3">
+            <button class="btn btn-primary submit" type="submit" style="margin-top:25px">Save</button>
+        </div>
+    </div>-->
+    <!-- Col -->
+    <!--</div>--><!-- Row -->
+    <!--</EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+    @code {
+
+    }
